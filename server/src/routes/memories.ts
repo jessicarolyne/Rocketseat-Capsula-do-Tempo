@@ -79,7 +79,7 @@ export async function memoriesRoute(app: FastifyInstance) {
     })
 
     if (memory.userId !== request.user.sub) {
-      return reply.status(401)
+      return reply.status(401).send()
     }
     memory = await prisma.memory.update({
       where: {
