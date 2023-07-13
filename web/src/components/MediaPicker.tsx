@@ -15,8 +15,15 @@ export function MediaPicker() {
   }
   return(
     <>
-      <input onChange={onFileSelected} type="file" id="midia"  className="invisible h-0 w-0"/>
-      {preview &&<img src={preview} alt="" className="w-full aspect-video rounded-lg object-cover"/>}
+      <input
+      onChange={onFileSelected} 
+      name="coverUrl"
+      type="file" 
+      id="midia"  
+      className="invisible h-0 w-0"
+      accept="image/*"
+      />
+      {preview && <img src={preview} alt="" className="w-full aspect-video rounded-lg object-cover"/>}
     </>
   )
 }
